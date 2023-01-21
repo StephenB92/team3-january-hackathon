@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block meta %}
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, ">
+            <meta name="description" content="">
+        {% endblock meta %}
+
+        {% block extra_meta %}
+        {% endblock extra_meta %}
+
+        {% block corecss %}
+        {% endblock %}
+
+        {% block extra_css %}
+        {% endblock extra_css %}
+
+        {% block core_js %}
+        {% endblock core_js %}
+
+        {% block extra_js %}
+        {% endblock extra_js %}
+
+        <title>AppNameHere {% block extra_title %}{% endblock extra_title %}</title>
+    </head>
+    <body>
+    </body>
+</html>
