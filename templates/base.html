@@ -1,59 +1,36 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
+    <head>
+        {% block meta %}
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, ">
+            <meta name="description" content="">
+        {% endblock meta %}
 
-<head>
+        {% block extra_meta %}
+        {% endblock extra_meta %}
 
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
+        {% block corecss %}
+        {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+        {% block extra_css %}
+        {% endblock extra_css %}
 
-    {% block corecss %}
+        {% block core_js %}
+        {% endblock core_js %}
 
-    {% endblock %}
+        {% block extra_js %}
+        {% endblock extra_js %}
 
-    {% block extra_css %}
-    {% endblock %}
+        <title>AppNameHere {% block extra_title %}{% endblock extra_title %}</title>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock content %}
 
-    {% block corejs %}
-    <script src="https://kit.fontawesome.com/2ecf9218d5.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    {% endblock %}
-
-    {% block extra_js %}
-    {% endblock %}
-
-    <title>Fit Healthy Body {% block extra_title %}{% endblock %}</title>
-</head>
-
-<body>
-   <ul>
-        <li>
-            <div>
-                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'index' %}"> Blog </a>
-                </div>
-            <div>
-                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'cashbook' %}"> Blog </a>
-                </div>
-            <div>
-             <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'goals' %}"> Blog </a>
-             </div>
-        </li>
-    </ul>
-</div>
-</body>
-
+        {% block postload_js %}
+        {% endblock postload_js %}
+    </body>
 </html>
