@@ -27,5 +27,10 @@
         <title>AppNameHere {% block extra_title %}{% endblock extra_title %}</title>
     </head>
     <body>
+        {% block content %}
+        {% endblock content %}
+
+        {% block postload_js %}
+        {% endblock postload_js %}
     </body>
 </html>
