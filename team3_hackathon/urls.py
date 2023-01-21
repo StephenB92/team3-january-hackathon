@@ -7,4 +7,4 @@ urlpatterns = [
     path('', include('home.urls')),
     path('cashbook/', include('cashbook.urls')),
     path('goals', include('goals.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
