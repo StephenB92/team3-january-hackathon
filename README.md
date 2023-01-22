@@ -165,6 +165,10 @@
 << you may have already done this above in the Imagery section, but just in case, please attribute Media acquisition here >>
 ​
 ### Acknowledgements
-<< personal thanks and praise 🙌 >>
 
-[Stephen Brereton](https://github.com/StephenB92)
+>* [Stephen Brereton](https://github.com/StephenB92)
+>* [Nik](https://github.com/Niki-Tester)
+>* [Veronika](https://github.com/vero-nika-2828)
+>* [Tanise Carvalho](https://github.com/tanisecarvalho)
+>* [Samuel Naiwo](https://github.com/SamuelNaiwo)
+>* [Tinashe](https://github.com/chasakara)
