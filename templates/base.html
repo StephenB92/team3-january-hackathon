@@ -43,14 +43,19 @@
               My Goals
             </a>
         </div>
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="buttons">
-                  <a class="button is-danger" href="{% url 'account_logout' %}">
-                    <strong>Logout</strong>
-                  </a>
-                </div>
-              </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-danger" href="{% url 'account_logout' %}">
+                <strong>Logout</strong>
+              </a>
+            </div>
+          </div>
+          {% if user.is_authenticated %}
+            <h3 class="is-centered">
+              Welcome, {{ user.get_username }}
+            </h3>
+          {% endif %}
           {% else %}
           <div class="navbar-end">
             <div class="navbar-item">
@@ -63,12 +68,7 @@
                 </a>
               </div>
             </div>
-          {% endif %}
           </div>
-          {% if user.is_authenticated %}
-          <h3 class="navbar-text welcome-message">
-              Welcome, {{ user.get_username }}
-          </h3>
           {% endif %}
         </div>
       </nav>
