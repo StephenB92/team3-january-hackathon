@@ -12,27 +12,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.ico' %}">
 </head>
 
 <body>
-
     <!-- Navigation -->
-
     <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="">
-            <img src="../documentation/logo/test-logo.png" height="50" width="50">
+          <a class="navbar-item" href="{% url 'home' %}">
+            <img src="{% static "images/logo.png" %}" alt="Logo">
             <p class="is-small">Wallet Warriors</p>
           </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <!-- Nav Menu Button -->
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-      
-        <div id="navbarBasicExample" class="navbar-menu">
+        {% if user.is_authenticated %}
+        <div id="main-navbar" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">
               My Spending
@@ -41,20 +40,34 @@
             <a class="navbar-item">
               My Goals
             </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-danger" href="{% url 'account_logout' %}">
+                <strong>Logout</strong>
+              </a>
+            </div>
           </div>
-      
+          {% if user.is_authenticated %}
+            <h3 class="is-centered">
+              Welcome, {{ user.get_username }}
+            </h3>
+          {% endif %}
+          {% else %}
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-light">
+                <a class="button is-light" href="{% url 'account_signup' %}">
                   <strong>Sign up</strong>
                 </a>
-                <a class="button is-success">
+                <a class="button is-success" href="{% url 'account_login' %}">
                   Log in
                 </a>
               </div>
             </div>
           </div>
+          {% endif %}
         </div>
       </nav>
 
@@ -95,6 +108,7 @@
                 </p>
         </div>
     </footer>
+    <script src="{% static '/js/navMenu.js' %}"></script>
 </body>
 
 </html>

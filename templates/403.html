@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="hero is-success is-fullheight" id="section-403">
+  <div class="hero-body section-error">
+    <div class="container-error">
+      <p class="title">
+        403 Forbidden
+      </p>
+      <p class="subtitle">
+        Don't you try to bribe us! You don't have permission to access this page.
+      </p>
+      <a href="{% url 'home' %}" class="button is-success">Home Page</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
