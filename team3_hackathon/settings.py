@@ -170,4 +170,7 @@ if 'DEV' not in os.environ:
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+# API Keys
+EXCHANGE_API_KEY = os.environ.get('EXCHANGE_API_KEY')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
