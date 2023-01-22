@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="hero is-success is-fullheight" id="section-404">
+  <div class="hero-body">
+    <div id="container-404">
+      <p class="title">
+        404 Page Not Found
+      </p>
+      <p class="subtitle">
+        We can't find the page you're looking for. 😔
+      </p>
+      <a href="{% url 'home' %}" class="button is-success">Home Page</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
