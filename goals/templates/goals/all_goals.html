@@ -1,17 +1,21 @@
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container-fluid  all_goals">
-	<div class="your_goals">
-		<h6> My Goals </h6>
-       
-	</div>
-    {% for goal in goals %}
-    <div>
-    <a href="{% url 'goal_detail' goal.id %}" >{{ goal.goal_name }} </a>
-</div>
-    {% endfor %}
-   
-    
-	
-</div>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">My Goals</h1>
+        {% for goal in goals %}
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                    <a href="{% url 'goal_detail' goal.id %}" >{{ goal.goal_name }} </a>
+                        <p class="subtitle is-7">Date: {{ goal.goal_timestamp }}</p>
+                    </a>
+                    </article>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

@@ -21,9 +21,9 @@
     {% if user.is_authenticated %}
     {% if user.id == cashbook.author.id %}
     <div class="buttons">
+      <a href="{% url 'my_cashbooks' %}"><button class="button is-light">Return to My Cashbooks</button></a>
       <a href="{% url 'update_cashbook' slug=cashbook.slug %}"><button class="button is-light">Edit
           Cashbook</button></a>
-      <a href="{% url 'my_cashbooks' %}"><button class="button is-light">Return to My Cashbooks</button></a>
       <a href="{% url 'delete_cashbook' slug=cashbook.slug %}"><button class="button is-danger">Delete
           Cashbook</button></a>
     </div>
