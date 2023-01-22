@@ -167,7 +167,7 @@
 ### Acknowledgements
 
 >* [Stephen Brereton](https://github.com/StephenB92)
->* [Nick](https://github.com/Niki-Tester)
+>* [Nik](https://github.com/Niki-Tester)
 >* [Veronika](https://github.com/vero-nika-2828)
 >* [Tanise Carvalho](https://github.com/tanisecarvalho)
 >* [Samuel Naiwo](https://github.com/SamuelNaiwo)
