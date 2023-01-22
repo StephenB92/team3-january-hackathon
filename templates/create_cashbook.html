@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div>
+    <h1 class="page-title">Create Cashbook<hr>
+    <h2 class="page-title">Please add details of your spending below</h2>
+    <form method="post" enctype="multipart/form-data">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="button is-dark">
+            <a href="{% url 'create_cashbook' %}">
+                <strong>Create</strong>
+            </a>
+        </button>
+    </form>
+</div>
+
+{% endblock %}

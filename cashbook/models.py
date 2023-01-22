@@ -9,7 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Cashbook(models.Model):
     """ Model for Cashbook """
-    book_title = models.CharField(max_length=200, unique=True)
+    book_title = models.CharField(max_length=200, unique=False)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='cashbooks')
@@ -26,7 +26,7 @@ class Cashbook(models.Model):
 
     def save(self, *args, **kwargs):
         """ Function ensuring a user created cashbook generates a new slug """
-        self.slug = slugify(self.book_title)
+        self.slug = slugify(self.created_on)
         super(Cashbook, self).save(*args, **kwargs)
 
     def __str__(self):
