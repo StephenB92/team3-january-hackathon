@@ -18,16 +18,17 @@
             <p><strong>Total: </strong> {{ cashbook.spend_amount | safe }}</p>
         </div>
     </div>
+    {% if user.is_authenticated %}
+    {% if user.id == cashbook.author.id %}
     <div class="buttons">
-      <a class="button is-success" href="">
-        <strong>Edit</strong>
-      </a>
+      <a href="{% url 'update_cashbook' slug=cashbook.slug %}"><button class="button is-light">Edit Cashbook</button></a>
       <a class="button is-danger" href="">
         <strong>Delete</strong>
       </a>
     </div>
-    </div>
+    {% endif %}
+    {% endif %}
+  </div>
 </section>
-
 
 {% endblock %}

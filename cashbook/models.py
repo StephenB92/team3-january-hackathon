@@ -3,6 +3,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.shortcuts import reverse
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -36,3 +37,7 @@ class Cashbook(models.Model):
     def __str__(self):
         """ Returns the book_category """
         return f"{self.book_category}"
+
+    def get_absolute_url(self):
+        """ Obtains cashbook_detail page after user edits """
+        return reverse('cashbook_detail', kwargs={'slug': self.slug})

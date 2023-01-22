@@ -7,4 +7,6 @@ urlpatterns = [
          name='cashbook_detail'),
     path('createcashbook/', views.CashbookCreate.as_view(),
          name='create_cashbook'),
+    path('<slug:slug>/updatecashbook/', views.CashbookUpdate.as_view(),
+         name='update_cashbook'),
 ]
