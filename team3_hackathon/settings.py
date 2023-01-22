@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'api',
     'home',
+    'cashbook',
 ]
 
 SITE_ID = 1
