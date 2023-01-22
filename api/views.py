@@ -6,14 +6,18 @@ import json
 
 
 def weather_api(request):
-
+    """
+    A view to handle weather api calls
+    """
     if request.method == "GET":
-        return HttpResponse(content="Converter Test Api Route", status=200)
+        return HttpResponse(content="Weather Test Api Route", status=200)
     return HttpResponse(status=400)
 
 
 def converter_api(request):
-
+    """
+    A view to handle exchange rate api currency conversion
+    """
     if request.method == "GET":
         return HttpResponse(content="Converter Test Api Route", status=200)
     return HttpResponse(status=400)
