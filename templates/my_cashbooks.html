@@ -3,39 +3,42 @@
 
 {% block content %}
 
-
 <h2>Hello {{ user.get_username }}</h2>
 <div class="buttons">
-  <a class="button is-dark" href="">
+  <a class="button is-dark" href="{% url 'create_cashbook' %}">
     <strong>Create New Cashbook</strong>
   </a>
 </div>
 <!--Containers for spend categories-->
-{% for cashbook in cashbook_list %}
-<div class="tile is-ancestor">
-  <div class="tile is-parent">
-    <article class="tile is-child box">
-      <a href="{% url 'cashbook_detail' cashbook.slug %}">
-        <p class="title is-3">
-          </h2>{{ cashbook.book_title | safe }}</p>
-        <p class="subtitle is-5">{{ cashbook.book_category | safe }}</p>
-        <p class="subtitle is-7">Date: {{ cashbook.created_on }}</p>
-      </a>
-    </article>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-      <ul>
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; PREV </a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}"> NEXT &raquo;</a></li>
-        {% endif %}
-      </ul>
-    </nav>
-    {% endif %}
+<div>
+  <div>
+    {% for cashbook in cashbook_list %}
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <a href="{% url 'cashbook_detail' cashbook.slug %}">
+            <p class="title is-3">
+              </h2>{{ cashbook.book_title | safe }}</p>
+            <p class="subtitle is-5">{{ cashbook.book_category | safe }}</p>
+            <p class="subtitle is-7">Date: {{ cashbook.created_on }}</p>
+          </a>
+        </article>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if is_paginated %}
+  <nav aria-label="Page navigation" class="has-text-centered button">
+    <ul>
+      {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; PREV </a></li>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}"> NEXT &raquo;</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
-{% endfor %}
 
-
-  {% endblock %}
+{% endblock %}
