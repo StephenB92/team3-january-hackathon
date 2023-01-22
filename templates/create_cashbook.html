@@ -2,19 +2,26 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<div>
-    <h1 class="page-title">Create Cashbook<hr>
-    <h2 class="page-title">Please add details of your spending below</h2>
-    <form method="post" enctype="multipart/form-data">
-        {{ form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="button is-dark">
-            <a href="{% url 'create_cashbook' %}">
-                <strong>Create</strong>
-            </a>
-        </button>
-    </form>
-</div>
+<section class="section">
+    <div class="container">
+        <h1 class="title">Create Cashbook<hr>
+        <h2 class="subtitle">Please add details of your spending below</h2>
+        <form class="allauth-form" method="post" enctype="multipart/form-data">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <br>
+            <button type="submit" class="button is-success">
+                <a href="{% url 'create_cashbook' %}">
+                    <strong>Create</strong>
+                </a>
+            </button>
+            <button type="button" class="button is-light">
+                <a href="{% url 'my_cashbooks' %}">
+                    <strong>Return to My Cashbooks</strong>
+                </a>
+            </button>
+        </form>
+    </div>
+</section>
 
 {% endblock %}

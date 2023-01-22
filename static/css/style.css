@@ -63,7 +63,7 @@
     padding: .5rem 0;
 }
 
-.allauth-form input[type="text"], .allauth-form input[type="password"], .allauth-form input[type="email"] {
+.allauth-form input[type="text"], .allauth-form input[type="password"], .allauth-form input[type="email"], .allauth-form input[type="number"] {
     max-width: 100%;
     width: 100%;
     background-color: #fff;
