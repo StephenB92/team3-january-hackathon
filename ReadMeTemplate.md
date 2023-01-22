@@ -6,11 +6,10 @@
 
 >Wallet Warrior
 
-## Contents
-
+## Contents(#contents)
 - [Team Name](#team-name)
 - [Website/App Name](#websiteapp-name)
-- [Contents](#contents)
+- [Contents(#contents)](#contentscontents)
   - [First-Time User Goals](#first-time-user-goals)
   - [Returning User Goals](#returning-user-goals)
   - [Technology:](#technology)
@@ -106,12 +105,7 @@
 ## Design
 ​
 ### Color Scheme:
->* Brown Derby #462414
->* Soft Amber #D3C0B7
->* Ocean Green #4EBA76
->* Gray #929292
->* Calico #DDAC90
-
+<< detail your color palette here >>
 ​
 ### Typography:
 << what font pairings did your team consider and pick? And why? >>
@@ -165,10 +159,7 @@
 << you may have already done this above in the Imagery section, but just in case, please attribute Media acquisition here >>
 ​
 ### Acknowledgements
+<< personal thanks and praise 🙌 >>
 
->* [Stephen Brereton](https://github.com/StephenB92)
->* [Nik](https://github.com/Niki-Tester)
->* [Veronika](https://github.com/vero-nika-2828)
->* [Tanise Carvalho](https://github.com/tanisecarvalho)
->* [Samuel Naiwo](https://github.com/SamuelNaiwo)
->* [Tinashe](https://github.com/chasakara)
+[Stephen Brereton](https://github.com/StephenB92)
+
