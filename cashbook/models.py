@@ -41,3 +41,7 @@ class Cashbook(models.Model):
     def get_absolute_url(self):
         """ Obtains cashbook_detail page after user edits """
         return reverse('cashbook_detail', kwargs={'slug': self.slug})
+
+    def get_delete_url(self):
+        """ Obtains my_cashbooks page after user deletes """
+        return reverse('my_cashbooks', kwargs={'slug': self.slug})

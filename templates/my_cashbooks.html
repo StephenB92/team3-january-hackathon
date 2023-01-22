@@ -19,7 +19,7 @@
           <a href="{% url 'cashbook_detail' cashbook.slug %}">
             <p class="title is-3">
               </h2>{{ cashbook.book_title | safe }}</p>
-            <p class="subtitle is-5">{{ cashbook.book_category | safe }}</p>
+            <p class="subtitle is-5">{{ cashbook.book_category | safe }} - Total: €{{ cashbook.spend_amount | safe }}</p>
             <p class="subtitle is-7">Date: {{ cashbook.created_on }}</p>
           </a>
         </article>

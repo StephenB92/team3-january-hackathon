@@ -5,6 +5,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.urls import reverse_lazy
 from .models import Cashbook
 from .forms import CashbookForm
 
@@ -98,3 +99,21 @@ class CashbookUpdate(SuccessMessageMixin,
             cleaned_data,
             calculated_field=self.object.book_title,
         )
+
+
+class CashbookDelete(generic.DeleteView):
+    """
+    This view is used to allow the logged in user to delete their cashbook.
+    """
+    queryset = Cashbook.objects.all()
+    template_name = 'delete_cashbook.html'
+    success_message = "Cashbook was deleted successfully"
+    success_url = reverse_lazy('my_cashbooks')
+
+    def delete(self, request, *args, **kwargs):
+        """
+        This function is used to display a delete message.
+        Credit to Stack Overflow.
+        """
+        messages.warning(self.request, self.success_message)
+        return super(CashbookDelete, self).delete(request, *args, **kwargs)
