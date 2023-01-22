@@ -31,12 +31,12 @@
         Delete
     </button>
     <!-- Modal -->
-    <div class="modal fade" id="delete_goal_bmodal" tabindex="-1" role="dialog" aria-labelledby="delete_goal_modalLabel"
+    <div class="modal fade" id="delete_goal" tabindex="-1" role="dialog" aria-labelledby="delete_goal"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="delete_goal_modalLabel">
+                    <h5 class="modal-title" id="delete_goal">
                         Delete Goal
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -57,5 +57,9 @@
         </div>
     </div>
 </div>
-
+<script>
+    $( document ).on( "click", "#delete", function() {
+        $('#delete_goal').modal('hide');
+      });
+</script>
 {% endblock %}

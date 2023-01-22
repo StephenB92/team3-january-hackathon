@@ -67,11 +67,11 @@ def edit_goal(request, goal_id):
     return render(request, template, context)
 
 
-@login_required
 def delete_goal(request, goal_id):
     """ Delete a goal from the store """
-    goal = get_object_or_404(Goal, pk=goal_id)
+    goals = MyGoal.objects.all()
+    goal = get_object_or_404(MyGoal, pk=goal_id)
     goal.delete()
     messages.success(request, 'Goal deleted!')
-    return redirect(reverse('goals'))
+    return render(request, 'goals/all_goals.html', {'goals': goals})
 
