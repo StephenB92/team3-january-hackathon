@@ -1,37 +1,100 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
-    <head>
-        {% block meta %}
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, ">
-            <meta name="description" content="">
+
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <title>Wallet Warriors</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="">
+            <img src="../documentation/logo/test-logo.png" height="50" width="50">
+            <p class="is-small">Wallet Warriors</p>
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              My Spending
+            </a>
             
-        {% endblock meta %}
+            <a class="navbar-item">
+              My Goals
+            </a>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-light">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-success">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-        {% block extra_meta %}
-        {% endblock extra_meta %}
-
-        {% block corecss %}
-        {% endblock %}
-
-        {% block extra_css %}
-        {% endblock extra_css %}
-
-        {% block core_js %}
-        {% endblock core_js %}
-
-        {% block extra_js %}
-        {% endblock extra_js %}
-
-        <title>AppNameHere {% block extra_title %}{% endblock extra_title %}</title>
-    </head>
-    <body>
+    <main class="container">
         {% block content %}
+        <!-- Content Goes here -->
         {% endblock content %}
+    </main>
 
-        {% block postload_js %}
-        {% endblock postload_js %}
-    </body>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered is-small">
+        <!-- Copyright -->
+          <p>
+            <strong>&copy; Wallet Warriors 2023</strong> by Budget Bandits. 
+          </p>
+          <p>Follow us for updates:</p>
+                <span class="icon">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                        aria-label="Visit our Facebook page (opens in new tab)"><i class="fab fa-facebook"></i></a>
+                </span>
+                <span class="icon">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                        aria-label="Visit our Instagram page (opens in new tab)"><i class="fab fa-instagram"></i></a>
+                </span>
+                <span class="icon">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener"
+                        aria-label="Visit our Twitter page (opens in new tab)"><i class="fab fa-twitter"></i></a>
+                </span>
+                <span class="icon">
+                    <a href="https://www.youtube.com/" target="blank" rel="noopener"
+                        aria-label="Visit out Youtube page (opens in new tab)"><i class="fab fa-youtube"></i></a>
+                </span>
+                <!-- Disclaimer -->
+                <p>
+                    <strong>Disclaimer: </strong>Budget Bandits are not providing financial advice of any kind and make no 
+                    representations or warranties in this respect. Wallet Warriors is for the users personal use only.
+                </p>
+        </div>
+    </footer>
+</body>
+
 </html>
