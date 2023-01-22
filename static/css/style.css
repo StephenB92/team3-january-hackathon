@@ -60,7 +60,7 @@
 
 /* allauth form */
 .allauth-form p {
-    padding: .5rem;
+    padding: .5rem 0;
 }
 
 .allauth-form input[type="text"], .allauth-form input[type="password"], .allauth-form input[type="email"] {
