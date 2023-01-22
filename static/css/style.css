@@ -15,7 +15,6 @@
    object-fit:cover;
 }
 
-
 #homepage-text{
     margin-top: 15%;
     justify-content: center;
@@ -27,9 +26,9 @@
     font-size: xx-large;
     margin-bottom: 20px;
     text-align: center;
-  
 }
 
+/* Error handling pages */
 #section-404 {
     background-image: url('../images/404.jpg');
     background-size: cover;
@@ -57,4 +56,22 @@
     background-color: black;
     padding: 1rem;
     width: 50%;
+}
+
+/* allauth form */
+.allauth-form p {
+    padding: .5rem;
+}
+
+.allauth-form input[type="text"], .allauth-form input[type="password"], .allauth-form input[type="email"] {
+    max-width: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+    border-radius: 4px;
+    font-size: 1rem;
+    height: 2.5em;
+    line-height: 1.5;
+    padding: 0.5rem;
 }
