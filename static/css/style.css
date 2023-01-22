@@ -1,0 +1,16 @@
+#section-404 {
+    background-image: url('../images/404.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+#section-404 .hero-body {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#container-404 { 
+    background-color: black;
+    padding: 1rem;
+    width: 50%;
+}
