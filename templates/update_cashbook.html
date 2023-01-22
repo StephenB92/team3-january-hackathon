@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <h1>Update Cashbook</h1><hr>
+    {% if user.is_authenticated %}
+    {% if user.id == cashbook.author.id %}
+    <!-- This checks that the user is the original creator of the cashbook -->
+    <h2>Have some changes to make?</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button class="button is-light" type="submit">Update</button>
+        <a href="{% url 'cashbook_detail' cashbook.slug %}" class="button is-danger">Cancel</a>
+    </form>
+    {% else %}
+    <h2>You do not have permission to update {{ cashbook.book_title }} as you are not the creator.</h2>
+    <hr>
+    <p>To view your created cashbooks, please click <a href="{% url 'my_cashbooks' %}">here</a>.</p>
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

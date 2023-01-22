@@ -18,6 +18,13 @@ class CashbookList(generic.ListView):
     template_name = 'my_cashbooks.html'
     paginate_by = 9
 
+    def get_queryset(self):
+        """
+        Function which filters the my cashbooks page to those
+        created by the user.
+        """
+        return Cashbook.objects.filter(author=self.request.user)
+
 
 class CashbookDetail(generic.DetailView):
     """
@@ -25,7 +32,7 @@ class CashbookDetail(generic.DetailView):
     """
     def get(self, request, slug, *args, **kwargs):
         """
-        This function obtains recipe data to display to the user.
+        This function obtains cashbook data to display to the user.
         """
         cashbook = Cashbook.objects.get(slug=slug)
         return render(request, "cashbook_detail.html", {"cashbook": cashbook})
@@ -61,3 +68,33 @@ class CashbookCreate(SuccessMessageMixin,
 
     def get_success_url(self):
         return reverse('my_cashbooks')
+
+
+class CashbookUpdate(SuccessMessageMixin,
+                     generic.UpdateView):
+    """
+    This view is used to allow the logged in user to update their cashbook.
+    """
+    queryset = Cashbook.objects.all()
+    form_class = CashbookForm
+    template_name = 'update_cashbook.html'
+    success_message = "%(calculated_field)s was updated successfully"
+
+    def form_valid(self, form):
+        """
+        This method ensures that the user is set as the
+        creator of the cashbook.
+        """
+        form.instance.author = self.request.user
+        form.save()
+        return super().form_valid(form)
+
+    def get_success_message(self, cleaned_data):
+        """
+        This function adds the cashbook title into the success message.
+        Credit to the Django Documentation.
+        """
+        return self.success_message % dict(
+            cleaned_data,
+            calculated_field=self.object.book_title,
+        )
