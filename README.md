@@ -118,9 +118,10 @@
 << what font pairings did your team consider and pick? And why? >>
 ​
 ### Imagery:
-<< Detail imagery used to compliment your build & theme >>
-​
-<< ensure source attribution is maintained, and that you have used copyright free material >>
+>![Landing page](docs/landing%20page.png)
+>![Sign Up page](docs/sign%20up%20page.png)
+>![Log In page](docs/log%20in%20page.png)
+>![Verify Email page](docs/verify%20email%20page.png)
 ​
 ## Wireframes:
 
