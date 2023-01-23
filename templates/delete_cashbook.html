@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">Delete Cashbook</h1> <hr>
+        {% if user.is_authenticated %}
+        {% if user.id == cashbook.author.id %}
+        <!-- This checks that the user is the original creator of the author -->
+        <h2 class="subtitle">Are you sure you want to delete {{ cashbook.book_title }} from your account?</h2>
+        <form class="allauth-form" method="post">
+            {% csrf_token %}
+            <br>
+            <div class="buttons">
+                <button class="button is-danger" type="submit">Delete</button>
+                <button class="button is-light"><a href="{% url 'cashbook_detail' cashbook.slug %}">Cancel</a></button>
+            </div>
+        </form>
+        {% else %}
+        <h2 class="subtitle">You do not have permission to delete {{ cashbook.book_title }} from Wallet Warrior as you are not the creator.</h2>
+        <hr>
+        <p>To view your created cashbooks, please click <a href="{% url 'my_cashbooks' %}">here</a>.</p>
+        {% endif %}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -6,25 +6,26 @@
 <section class="section">
   <div class="container">
     <div class="cashbook-box">
-        <div class="cashbook-header">
-          <h1 class="title">
-              {{ cashbook.book_title | safe }}
-          </h1>
-          <h2 class="subtitle"> {{ cashbook.author }} | {{ cashbook.created_on }} </h2>
-        </div>
-        <div class="cashbook-details">
-            <p><strong>Spend Category: </strong> {{ cashbook.book_category | safe }}</p>
-            <p><strong>Spend items: </strong> {{ cashbook.spend_item | safe }}</p>
-            <p><strong>Total: </strong> {{ cashbook.spend_amount | safe }}</p>
-        </div>
+      <div class="cashbook-header">
+        <h1 class="title">
+          {{ cashbook.book_title | safe }}
+        </h1>
+        <h2 class="subtitle"> {{ cashbook.author }} | {{ cashbook.created_on }} </h2>
+      </div>
+      <div class="cashbook-details">
+        <p><strong>Spend Category: </strong> {{ cashbook.book_category | safe }}</p>
+        <p><strong>Spend items: </strong> {{ cashbook.spend_item | safe }}</p>
+        <p><strong>Total: </strong> {{ cashbook.spend_amount | safe }}</p>
+      </div>
     </div>
     {% if user.is_authenticated %}
     {% if user.id == cashbook.author.id %}
     <div class="buttons">
-      <a href="{% url 'update_cashbook' slug=cashbook.slug %}"><button class="button is-light">Edit Cashbook</button></a>
-      <a class="button is-danger" href="">
-        <strong>Delete</strong>
-      </a>
+      <a href="{% url 'my_cashbooks' %}"><button class="button is-light">Return to My Cashbooks</button></a>
+      <a href="{% url 'update_cashbook' slug=cashbook.slug %}"><button class="button is-light">Edit
+          Cashbook</button></a>
+      <a href="{% url 'delete_cashbook' slug=cashbook.slug %}"><button class="button is-danger">Delete
+          Cashbook</button></a>
     </div>
     {% endif %}
     {% endif %}
