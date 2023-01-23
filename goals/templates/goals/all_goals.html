@@ -9,10 +9,14 @@
         <div class="tile is-ancestor">
             <div class="tile is-parent">
                 <article class="tile is-child box">
-                    <select name="from-currency" id="from-currency"></select>
-                    <select name="to-currency" id="to-currency"></select>
-                    <input type="number" name="amount" id="amount-input" step="0.01">
-                    <button id="convert-button">Convert</button>
+                    <div class="select">
+                        <select name="from-currency" id="from-currency"></select>
+                    </div>
+                    <div class="select">
+                        <select name="to-currency" id="to-currency"></select>
+                    </div>
+                    <input class="input" type="number" name="amount" id="amount-input" step="0.01">
+                        <button class="button is-success" id="convert-button">Convert</button> 
                 </article>
             </div>
         </div>
