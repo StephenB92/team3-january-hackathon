@@ -68,10 +68,12 @@
 ### Frameworks
 
 >* Django
+>* Bulma CSS
 
 ### Other tools
 
 >* Git
+>* API Layer: Exchange Rates Data API
 
 ​
 ## Initial MVP Idea:
@@ -100,9 +102,13 @@
 ​
 ### Actual idea & content:
 ​
-<< how does you final product/project match up to your initial mvp plans >>
-​
-<< detail idea / features / functionality here >>
+Our MVP was an app to track expenses and goals.
+- Cashbook:
+  - People are able to log their expenses and select a category. Having this overview they can have a better understanding of where they money is going.
+- Goals:
+  - On goals people can create a goal and if they are in a diferent currency they can convert the ammount needed to and know how much they would spend on their own currency.
+
+What is missing from our main idea is to have the ability to add money to the goals. That way the user would be able to know how close they are to reach their goals.
 ​
 ## Design
 ​
@@ -114,9 +120,6 @@
 >* Calico #DDAC90
 
 ​
-### Typography:
-<< what font pairings did your team consider and pick? And why? >>
-​
 ### Imagery:
 >![Landing page](docs/landing%20page.png)
 >![Sign Up page](docs/sign%20up%20page.png)
@@ -127,11 +130,22 @@
 
 ### Mobile Wireframes:
 ​​​
->![](docs/wireframes/mobile.png)
+>![Mobile](docs/wireframes/mobile.png)
+>![Mobile](docs/wireframes/mobile1.png)
+>![Mobile](docs/wireframes/mobile2.png)
+>![Mobile](docs/wireframes/mobile3.png)
 
 ### Desktop Wireframes:
 
->![](docs/wireframes/signup.png)
+>![Sign up](docs/wireframes/signup.png)
+>![Login](docs/wireframes/login.png)
+>![Cashbook](docs/wireframes/cashbook1.png)
+>![Cashbook List](docs/wireframes/cashbook2.png)
+>![Goal](docs/wireframes/goal.png)
+>![Login](docs/wireframes/login.png)
+>![404 Page](docs/wireframes/404.png)
+>![500 Page](docs/wireframes/500.png)
+
 
 ## Deployment
 
