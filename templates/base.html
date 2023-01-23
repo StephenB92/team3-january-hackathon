@@ -37,7 +37,7 @@
               My Cashbooks
             </a>
             
-            <a class="navbar-item">
+            <a class="navbar-item" href="{% url 'all_goals' %}">
               My Goals
             </a>
         </div>
@@ -108,7 +108,9 @@
                 </p>
         </div>
     </footer>
-    <script src="{% static '/js/navMenu.js' %}"></script>
+    {% block extra_js %}
+      <script src="{% static '/js/navMenu.js' %}"></script>
+    {% endblock extra_js %}
 </body>
 
 </html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="goal-box">
+        <div class="goal-header">
+            <h1 class="title">
+                {{ goal.goal_name}}
+            </h1>
+        </div>
+        <div class="goal-details">
+            <p><strong>{{ goal.goal_description}}</p>
+            <p><strong>Date Added: </strong> {{ goal.goal_timestamp}}</p>
+        </div>
+        </div>
+        {% if user.is_authenticated %}
+        {% if session_name == goal.username %}
+        <div class="buttons">
+        <a href="{% url 'all_goals' %}"><button class="button is-light">Return to My Goals</button></a>
+        <a href="{% url 'edit_goal' goal.id %}"><button class="button is-success">Edit
+            Goal</button></a>
+        <a href="{% url 'delete_goal' goal.id %}"><button class="button is-danger">Delete
+            Goal</button></a>
+        </div>
+        {% endif %}
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

@@ -32,8 +32,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'api',
-    'home',
+    'goals',
     'cashbook',
+    'home',
 ]
 
 SITE_ID = 1

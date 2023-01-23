@@ -75,3 +75,19 @@
     line-height: 1.5;
     padding: 0.5rem;
 }
+
+/* cashbook details */
+
+.cashbook-details {
+    margin: 1rem 0;
+}
+
+/* goal details */
+.goal-details {
+    margin: 1rem 0;
+}
+
+/* buttons */
+.buttons a:not(:first-child) {
+    margin-left: 1rem;
+}
