@@ -31,6 +31,7 @@
   - [Deployment](#deployment)
       - [How to Fork](#how-to-fork)
       - [How to Clone](#how-to-clone)
+      - [Features](#features)
   - [Testing](#testing)
   - [Credits](#credits)
     - [Code](#code)
@@ -149,9 +150,21 @@
 >4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 >5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
-​
+
+
 ## Testing
-<< detail testing logs here - any known bugs, and squashed bugs 🐛🐛 >>
+>* I had no problem launching the website.
+>* I clicked the Facebook link in the footer and it took me to Facebook.
+>* I clicked the Instagram link in the footer and it took me to Instagram.
+>* I clicked the Twitter link in the footer and it took me to Twitter.
+>* I clicked the Youtube link in the footer and it took me to Youtube.
+>* I clicked the white Sign Up button on the top right hand side and the sign up page loaded.
+>* I was able to enter my email address, username, password and password again.
+>* I clicked the green Sign Up button and it took me to the verify email page.
+>* I clicked the Wallet Warriors logo on the top left hand side and it took me back to the landing page.
+>* I clicked the green Log In button on the top right hand side and it took me to the log in page.
+​
+​
 ​
 ## Credits
 ​
