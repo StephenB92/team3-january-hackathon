@@ -1,66 +1,31 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container">
-    <h3> My Goals</h3>
-    <div class="add_button">
-        {% if session_name == goal.username %}
-        <a id="add-btn" href="{% url 'edit_goal' goal.id %}" class="btn btn-success add_goal">Edit
-            your Goal</a>
-           {% endif %} 
-    </div>
-    <div class="goal_name">
-        
-        <p>
-            {{ goal.goal_name}}
-        </p>
-    </div>
-    <div class="goal_description">
-        <p>
-            {{ goal.goal_description}}
-        </p>
-    </div>
-    <div class="goal_name">
-        <p>
-            {{ goal.goal_timestamp}}
-        </p>
-    </div>
-
-
-    <!--Sends you to a delete modal for clicked goal-->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_goal_modal">
-        Delete
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="delete_goal" tabindex="-1" role="dialog" aria-labelledby="delete_goal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="delete_goal">
-                        Delete Goal
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h3>Do you want to delete this goal?</h3>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        No
-                    </button>
-                    <a id="delete-btn" href="{% url 'delete_goal' goal.id %}"
-                        class="btn btn-danger delete_goal">Yes</a>
-                </div>
-            </div>
+<section class="section">
+    <div class="container">
+        <div class="goal-box">
+        <div class="goal-header">
+            <h1 class="title">
+                {{ goal.goal_name}}
+            </h1>
         </div>
+        <div class="goal-details">
+            <p><strong>{{ goal.goal_description}}</p>
+            <p><strong>Date Added: </strong> {{ goal.goal_timestamp}}</p>
+        </div>
+        </div>
+        {% if user.is_authenticated %}
+        {% if session_name == goal.username %}
+        <div class="buttons">
+        <a href="{% url 'all_goals' %}"><button class="button is-light">Return to My Goals</button></a>
+        <a href="{% url 'edit_goal' goal.id %}"><button class="button is-success">Edit
+            Goal</button></a>
+        <a href="{% url 'delete_goal' goal.id %}"><button class="button is-danger">Delete
+            Goal</button></a>
+        </div>
+        {% endif %}
+        {% endif %}
     </div>
-</div>
-<script>
-    $( document ).on( "click", "#delete", function() {
-        $('#delete_goal').modal('hide');
-      });
-</script>
+</section>
+
 {% endblock %}

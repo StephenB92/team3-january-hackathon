@@ -1,27 +1,19 @@
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Goal Management</h2>
-                <h5 class="text-muted">Edit your goal</h5>
-                <hr>
-            </div>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Edit your goal</h1> <hr>
+            <h2 class="subtitle">Have some changes to make?</h2>
+            <form method="POST" action="{% url 'edit_goal' goal.id %}" class="allauth-form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <br>
+                <div class="buttons">
+                    <a class="button is-danger" href="{% url 'all_goals' %}">Cancel</a>
+                    <button class="button is-success" type="submit">Update Goal</button>
+                </div>
+            </form>
         </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_goal' goal.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'all_goals' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update Goal</button>
-                    </div>
-                </form>
-            </div>            
-        </div>
-    </div>
+    </section>
 {% endblock %}
