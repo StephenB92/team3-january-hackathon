@@ -108,7 +108,9 @@
                 </p>
         </div>
     </footer>
-    <script src="{% static '/js/navMenu.js' %}"></script>
+    {% block extra_js %}
+      <script src="{% static '/js/navMenu.js' %}"></script>
+    {% endblock extra_js %}
 </body>
 
 </html>
