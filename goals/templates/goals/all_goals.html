@@ -1,7 +1,32 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
 
+<section class="section">
+    <div class="container">
+        <h1 class="title">Currency Converter</h1>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <select name="from-currency" id="from-currency"></select>
+                    <select name="to-currency" id="to-currency"></select>
+                    <input type="number" name="amount" id="amount-input" step="0.01">
+                    <button id="convert-button">Convert</button>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="tile is-ancestor is-hidden" id="result-box">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <p id="conversion-result"></p>
+            </article>
+        </div>
+    </div>
+</div>
+</section>
 <section class="section">
     <div class="container">
         <h1 class="title">My Goals</h1>
@@ -19,3 +44,7 @@
     </div>
 </section>
 {% endblock %}
+{% block extra_js %}
+    {{ block.super }}
+    <script src="{% static 'js/api.js' %}"></script>
+{% endblock extra_js %}
