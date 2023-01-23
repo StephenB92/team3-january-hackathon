@@ -161,13 +161,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-# if 'DEV' not in os.environ:
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#     # Turn on WhiteNoise storage backend that takes care of
-#     # compressing static files and creating unique names for each version so
-#     # they can safely be cached forever.
-#     STATICFILES_STORAGE = ('whitenoise.storage'
-#                            '.CompressedManifestStaticFilesStorage')
+if 'DEV' not in os.environ:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # Turn on WhiteNoise storage backend that takes care of
+    # compressing static files and creating unique names for each version so
+    # they can safely be cached forever.
+    STATICFILES_STORAGE = ('whitenoise.storage'
+                           '.CompressedManifestStaticFilesStorage')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
