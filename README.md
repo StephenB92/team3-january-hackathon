@@ -111,6 +111,11 @@ Our MVP was an app to track expenses and goals.
 What is missing from our main idea is to have the ability to add money to the goals. That way the user would be able to know how close they are to reach their goals.
 ​
 ## Design
+
+### Logo
+
+>![Logo](docs/logo.png)
+
 ​
 ### Color Scheme:
 >* Brown Derby #462414
@@ -182,18 +187,23 @@ What is missing from our main idea is to have the ability to add money to the go
 
 
 #### Known Bugs
-* In the initial model created for the Cashbook app, the unique indentifier was set as a slug which was derived from the Cashbook title. This caused an issue as there could only be one existing Cashbook called "Monday shop" for example. Obviously this isn't sustainable so the model was amended so the unique identifier would be derived from the date the Cashbook was created. This resolved the issue insofar as user's could have multiple Cashbooks with the same name and yet still leave them with a unique identifier. However, an issue would only arise if 2 users created a Cashbook at the exact same time. This is highly unlikely to happen but can still be categorised as a known bug.
+>* In the initial model created for the Cashbook app, the unique indentifier was set as a slug which was derived from the Cashbook title. This caused an issue as there could only be one existing Cashbook called "Monday shop" for example. Obviously this isn't sustainable so the model was amended so the unique identifier would be derived from the date the Cashbook was created. This resolved the issue insofar as user's could have multiple Cashbooks with the same name and yet still leave them with a unique identifier. However, an issue would only arise if 2 users created a Cashbook at the exact same time. This is highly unlikely to happen but can still be categorised as a known bug.
+
+>* Goals is currently not filtering by users.
 
 ## Credits
 
 ### Code
-<< any and all code that isn't yours...must go here >>
-
-### Content
-<< any content, such as facts/references/text that isn't yours...must go here >>
+>* We are using API Layer: Exchange Rates Data API
 
 ### Media
-<< you may have already done this above in the Imagery section, but just in case, please attribute Media acquisition here >>
+
+- Logo was created using Canva
+- The other images were found on Pexels
+  - [Main image](https://www.pexels.com/photo/cutout-paper-composition-with-graphic-and-hand-with-bills-5849592/)
+  - [404 Page](https://www.pexels.com/photo/a-person-looking-the-wallet-8719570/)
+  - [500 Page](https://www.pexels.com/photo/bills-capital-cash-cent-210679/)
+  - [403 Page](https://www.pexels.com/photo/hard-cash-on-a-briefcase-259027/)
 
 ### Acknowledgements
 
