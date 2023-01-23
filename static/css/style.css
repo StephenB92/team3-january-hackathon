@@ -1,25 +1,12 @@
-.home-page{
+.home-page {
     background-color: #003600;
     color: white;
     width:100%;
-    height: 70vh;
-    display:block;
-
-}
-
-.home-page-div {
-   display: flex;
-   top:0%;
-   width:100%;
-   height:auto;
-   object-fit:cover;
 }
 
 #homepage-text{
-    margin-top: 15%;
-    justify-content: center;
     text-align: justify;
-    padding:4rem; 
+    padding: 0 1rem;
 }
 
 #homepage-text h2{
