@@ -164,6 +164,9 @@
 >* I clicked the green Sign Up button and it took me to the verify email page.
 >* I clicked the Wallet Warriors logo on the top left hand side and it took me back to the landing page.
 >* I clicked the green Log In button on the top right hand side and it took me to the log in page.
+
+#### Known Bugs
+>* In the initial model created for the Cashbook app, the unique indentifier was set as a slug which was derived from the Cashbook title. This caused an issue as there could only be one existing Cashbook called "Monday shop" for example. Obviously this isn't sustainable so the model was amended so the unique identifier would be derived from the date the Cashbook was created. This resolved the issue insofar as user's could have multiple Cashbooks with the same name and yet still leave them with a unique identifier. However, an issue would only arise if 2 users created a Cashbook at the exact same time. This is highly unlikely to happen but can still be categorised as a known bug.
 ​
 ​
 ​
